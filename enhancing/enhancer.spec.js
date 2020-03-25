@@ -203,7 +203,6 @@ describe('Enhancement Failure', () => {
 
 describe('Get Item', () => {
   it('Returns item without change when enhancement is 0', () => {
-    // Throws the error message
     const item = {
       name: "Item Name",
       durability: 50,
