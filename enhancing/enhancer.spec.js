@@ -202,16 +202,32 @@ describe('Enhancement Failure', () => {
 });
 
 describe('Get Item', () => {
-  it.todo('Returns item without change when enhancement is 0', () => {
+  it('Returns item without change when enhancement is 0', () => {
+    const item = {
+      name: "Item Name",
+      durability: 50,
+      enhancement: 0
+    };
 
+    const get = enhancer.get(item);
+
+    expect(get.name).toBe(item.name);
+    expect(get.durability).toBe(item.durability);
+    expect(get.enhancement).toBe(item.enhancement);
   });
 
-  it.todo('Returns item durability and enhancement without change', () => {
+  it('Updates item name', () => {
+    const item = {
+      name: "Item Name",
+      durability: 50,
+      enhancement: 5
+    };
 
-  });
+    const get = enhancer.get(item);
 
-  it.todo('Updates item name', () => {
-
+    expect(get.name).toBe(`[+${item.enhancement}] ${item.name}`);
+    expect(get.durability).toBe(item.durability);
+    expect(get.enhancement).toBe(item.enhancement);
   });
 
   // it('Throws error if item is not an object', () => {
