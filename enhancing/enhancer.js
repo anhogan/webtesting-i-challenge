@@ -58,9 +58,11 @@ function isObject(item) {
 };
 
 function validateItem(item) {
-  if (item.name && item.durability && item.enhancement) {
-    if (typeof(item.name) === 'string' && typeof(item.durability) === 'number' && typeof(item.enhancement) === 'number') {
-      return item;
+  if (typeof(item.enhancement) === 'number' && item.enhancement >= 0) {
+    if (item.name && item.durability) {
+      if (typeof(item.name) === 'string' && typeof(item.durability) === 'number') {
+        return item;
+      };
     };
-  };
+  }
 };

@@ -210,8 +210,6 @@ describe('Get Item', () => {
       enhancement: 0
     };
 
-    console.log(item);
-
     const get = enhancer.get(item);
 
     expect(get.name).toBe(item.name);
