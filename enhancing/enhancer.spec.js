@@ -26,6 +26,25 @@ describe('Repair Item', () => {
     expect(() => enhancer.repair({ name: 'Item Name', enhancement: 10 })).toThrow();
     expect(() => enhancer.repair({ durability: 50, enhancement: 10 })).toThrow();
   });
+
+  it('Throws an error if item name is not a string', () => {
+    expect(() => enhancer.repair({ name: 10, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: null, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: NaN, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: undefined, durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if durability and enhancement are not integers', () => {
+    expect(() => enhancer.repair({ name: 'Item Name', durability: '50', enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: 50, enhancement: '10' })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: '50', enhancement: '10' })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: null, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: 50, enhancement: null })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: NaN, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: 50, enhancement: NaN })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: undefined, enhancement: 10 })).toThrow();
+    expect(() => enhancer.repair({ name: 'Item Name', durability: 50, enhancement: undefined })).toThrow();
+  });
 });
 
 describe('Enhancement Success', () => {
@@ -57,6 +76,25 @@ describe('Enhancement Success', () => {
     expect(() => enhancer.succeed({ name: 'Item Name', durability: 50 })).toThrow();
     expect(() => enhancer.succeed({ name: 'Item Name', enhancement: 10 })).toThrow();
     expect(() => enhancer.succeed({ durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if item name is not a string', () => {
+    expect(() => enhancer.succeed({ name: 10, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: null, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: NaN, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: undefined, durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if durability and enhancement are not integers', () => {
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: '50', enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: 50, enhancement: '10' })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: '50', enhancement: '10' })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: null, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: 50, enhancement: null })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: NaN, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: 50, enhancement: NaN })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: undefined, enhancement: 10 })).toThrow();
+    expect(() => enhancer.succeed({ name: 'Item Name', durability: 50, enhancement: undefined })).toThrow();
   });
 });
 
@@ -102,6 +140,25 @@ describe('Enhancement Failure', () => {
     expect(() => enhancer.fail({ name: 'Item Name', enhancement: 10 })).toThrow();
     expect(() => enhancer.fail({ durability: 50, enhancement: 10 })).toThrow();
   });
+
+  it('Throws an error if item name is not a string', () => {
+    expect(() => enhancer.fail({ name: 10, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: null, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: NaN, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: undefined, durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if durability and enhancement are not integers', () => {
+    expect(() => enhancer.fail({ name: 'Item Name', durability: '50', enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: 50, enhancement: '10' })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: '50', enhancement: '10' })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: null, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: 50, enhancement: null })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: NaN, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: 50, enhancement: NaN })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: undefined, enhancement: 10 })).toThrow();
+    expect(() => enhancer.fail({ name: 'Item Name', durability: 50, enhancement: undefined })).toThrow();
+  });
 });
 
 describe('Get Item', () => {
@@ -133,5 +190,24 @@ describe('Get Item', () => {
     expect(() => enhancer.get({ name: 'Item Name', durability: 50 })).toThrow();
     expect(() => enhancer.get({ name: 'Item Name', enhancement: 10 })).toThrow();
     expect(() => enhancer.get({ durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if item name is not a string', () => {
+    expect(() => enhancer.get({ name: 10, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: null, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: NaN, durability: 50, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: undefined, durability: 50, enhancement: 10 })).toThrow();
+  });
+
+  it('Throws an error if durability and enhancement are not integers', () => {
+    expect(() => enhancer.get({ name: 'Item Name', durability: '50', enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: 50, enhancement: '10' })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: '50', enhancement: '10' })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: null, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: 50, enhancement: null })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: NaN, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: 50, enhancement: NaN })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: undefined, enhancement: 10 })).toThrow();
+    expect(() => enhancer.get({ name: 'Item Name', durability: 50, enhancement: undefined })).toThrow();
   });
 });
