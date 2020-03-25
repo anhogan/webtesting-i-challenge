@@ -15,14 +15,14 @@ describe('Repair Item', () => {
     expect(repair.enhancement).toBe(item.enhancement);
   });
 
-  // it('Throws error if item is not an object', () => {
-  //   expect(() => enhancer.repair(undefined)).toThrow();
-  //   expect(() => enhancer.repair(null)).toThrow();
-  //   expect(() => enhancer.repair(NaN)).toThrow();
-  //   expect(() => enhancer.repair(['Item Name', 50, 15])).toThrow();
-  //   expect(() => enhancer.repair("Name, Durability, Enhancement")).toThrow();
-  //   expect(() => enhancer.repair(50)).toThrow();
-  // });
+  it('Throws error if item is not an object', () => {
+    expect(() => enhancer.repair(undefined)).toThrow();
+    expect(() => enhancer.repair(null)).toThrow();
+    expect(() => enhancer.repair(NaN)).toThrow();
+    expect(() => enhancer.repair(['Item Name', 50, 15])).toThrow();
+    expect(() => enhancer.repair("Name, Durability, Enhancement")).toThrow();
+    expect(() => enhancer.repair(50)).toThrow();
+  });
 
   // it('Throws an error if item does not contain name, durability, or enhancement', () => {
   //   expect(() => enhancer.repair({ name: 'Item Name' })).toThrow();
@@ -82,14 +82,14 @@ describe('Enhancement Success', () => {
     expect(succeed.enhancement).toBe(20);
   });
 
-  // it('Throws error if item is not an object', () => {
-  //   expect(() => enhancer.succeed(undefined)).toThrow();
-  //   expect(() => enhancer.succeed(null)).toThrow();
-  //   expect(() => enhancer.succeed(NaN)).toThrow();
-  //   expect(() => enhancer.succeed(['Item Name', 50, 15])).toThrow();
-  //   expect(() => enhancer.succeed("Name, Durability, Enhancement")).toThrow();
-  //   expect(() => enhancer.succeed(50)).toThrow();
-  // });
+  it('Throws error if item is not an object', () => {
+    expect(() => enhancer.succeed(undefined)).toThrowError('Item must be an object');
+    expect(() => enhancer.succeed(null)).toThrowError('Item must be an object');
+    expect(() => enhancer.succeed(NaN)).toThrowError('Item must be an object');
+    expect(() => enhancer.succeed(['Item Name', 50, 15])).toThrowError('Item must be an object');
+    expect(() => enhancer.succeed("Name, Durability, Enhancement")).toThrowError('Item must be an object');
+    expect(() => enhancer.succeed(50)).toThrowError('Item must be an object');
+  });
 
   // it('Throws an error if item does not contain name, durability, or enhancement', () => {
   //   expect(() => enhancer.succeed({ name: 'Item Name' })).toThrow();
@@ -163,14 +163,14 @@ describe('Enhancement Failure', () => {
     expect(fail.enhancement).toBe(17);
   });
 
-  // it('Throws error if item is not an object', () => {
-  //   expect(() => enhancer.fail(undefined)).toThrow();
-  //   expect(() => enhancer.fail(null)).toThrow();
-  //   expect(() => enhancer.fail(NaN)).toThrow();
-  //   expect(() => enhancer.fail(['Item Name', 50, 15])).toThrow();
-  //   expect(() => enhancer.fail("Name, Durability, Enhancement")).toThrow();
-  //   expect(() => enhancer.fail(50)).toThrow();
-  // });
+  it('Throws error if item is not an object', () => {
+    expect(() => enhancer.fail(undefined)).toThrow();
+    expect(() => enhancer.fail(null)).toThrow();
+    expect(() => enhancer.fail(NaN)).toThrow();
+    expect(() => enhancer.fail(['Item Name', 50, 15])).toThrow();
+    expect(() => enhancer.fail("Name, Durability, Enhancement")).toThrow();
+    expect(() => enhancer.fail(50)).toThrow();
+  });
 
   // it('Throws an error if item does not contain name, durability, or enhancement', () => {
   //   expect(() => enhancer.fail({ name: 'Item Name' })).toThrow();
@@ -230,14 +230,14 @@ describe('Get Item', () => {
     expect(get.enhancement).toBe(item.enhancement);
   });
 
-  // it('Throws error if item is not an object', () => {
-  //   expect(() => enhancer.get(undefined)).toThrow();
-  //   expect(() => enhancer.get(null)).toThrow();
-  //   expect(() => enhancer.get(NaN)).toThrow();
-  //   expect(() => enhancer.get(['Item Name', 50, 15])).toThrow();
-  //   expect(() => enhancer.get("Name, Durability, Enhancement")).toThrow();
-  //   expect(() => enhancer.get(50)).toThrow();
-  // });
+  it('Throws error if item is not an object', () => {
+    expect(() => enhancer.get(undefined)).toThrow();
+    expect(() => enhancer.get(null)).toThrow();
+    expect(() => enhancer.get(NaN)).toThrow();
+    expect(() => enhancer.get(['Item Name', 50, 15])).toThrow();
+    expect(() => enhancer.get("Name, Durability, Enhancement")).toThrow();
+    expect(() => enhancer.get(50)).toThrow();
+  });
 
   // it('Throws an error if item does not contain name, durability, or enhancement', () => {
   //   expect(() => enhancer.get({ name: 'Item Name' })).toThrow();
